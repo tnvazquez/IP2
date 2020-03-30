@@ -1,9 +1,12 @@
 # primemodule.py
-""" Determine if a number is prime or not. 
-    Input Arguments: Natual number
-    Return: Boolean. True if prime, false if not.
-"""
+
 import math
+""" Determine if a number is prime or not. 
+    Arguments: 
+    n (integer): Natural number
+    Return: 
+    Boolean: True if n is prime, false if not.
+"""
 def isPrime(n):
     if n > 1:
         for i in range(2, int(math.sqrt(n))+1):
@@ -13,17 +16,16 @@ def isPrime(n):
             return False
 
     return False
-
-
-""" Generates a list of prime numbers. Amount of numbers is given in parameter.
-    Input Arguments: Integer Number
-    Return: List of prime numbers
-"""
 def getNPrime(num):
+    """ Generates a list of prime numbers. Amount of numbers is given in parameter.
+        Arguments:
+             num (integer): Integer Number
+        Return:
+            list: List of prime numbers
+    """
     prime_numbers = []
-
-    for i in range(0, num):
-
-        if isPrime(i):
+    for i in range(num):
+        if isPrime(i + 1):
             prime_numbers.append(i)
-            return prime_numbers
+        return prime_numbers
+
